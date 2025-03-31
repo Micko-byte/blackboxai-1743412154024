@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memecoin Bundler | KYC Verification</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .file-upload {
+      height: 200px;
+      border: 2px dashed #cbd5e0;
+      transition: all 0.3s;
+    }
+    .file-upload:hover {
+      border-color: #7c3aed;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <div class="min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-2">
+          <i class="fas fa-coins text-2xl text-indigo-600"></i>
+          <span class="text-xl font-bold">Memecoin Bundler</span>
+        </a>
+        <div class="flex items-center space-x-4">
+          <span id="kyc-status" class="px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">Not Verified</span>
+          <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center">
+            <i class="fas fa-user text-indigo-600"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto p-6">
+      <div class="bg-white rounded-lg shadow overflow-hidden">
+        <div class="p-6 border-b">
+          <h2 class="text-xl font-bold">KYC Verification</h2>
+          <p class="text-gray-600 mt-1">Complete verification to access all features</p>
+        </div>
+
+        <div class="p-6">
+          <form id="kyc-form" class="space-y-8">
+            <!-- ID Document Front -->
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">ID Document (Front)</label>
+              <div class="file-upload relative rounded-lg flex flex-col items-center justify-center p-6 bg-gray-50 cursor-pointer" id="id-front-upload">
+                <input type="file" id="id-front" name="idFront" accept="image/*,.pdf" class="hidden">
+                <i class="fas fa-id-card text-4xl text-gray-400 mb-2"></i>
+                <p class="text-gray-500 text-center">
+                  <span class="font-medium text-indigo-600">Click to upload</span><br>
+                  or drag and drop<br>
+                  JPG, PNG or PDF (max 5MB)
+                </p>
+                <div id="id-front-preview" class="hidden mt-4 w-full"></div>
+              </div>
+            </div>
+
+            <!-- ID Document Back -->
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">ID Document (Back)</label>
+              <div class="file-upload relative rounded-lg flex flex-col items-center justify-center p-6 bg-gray-50 cursor-pointer" id="id-back-upload">
+                <input type="file" id="id-back" name="idBack" accept="image/*,.pdf" class="hidden">
+                <i class="fas fa-id-card text-4xl text-gray-400 mb-2"></i>
+                <p class="text-gray-500 text-center">
+                  <span class="font-medium text-indigo-600">Click to upload</span><br>
+                  or drag and drop<br>
+                  JPG, PNG or PDF (max 5MB)
+                </p>
+                <div id="id-back-preview" class="hidden mt-4 w-full"></div>
+              </div>
+            </div>
+
+            <!-- Proof of Address -->
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Proof of Address</label>
+              <div class="file-upload relative rounded-lg flex flex-col items-center justify-center p-6 bg-gray-50 cursor-pointer" id="address-upload">
+                <input type="file" id="address" name="proofOfAddress" accept="image/*,.pdf" class="hidden">
+                <i class="fas fa-home text-4xl text-gray-400 mb-2"></i>
+                <p class="text-gray-500 text-center">
+                  <span class="font-medium text-indigo-600">Click to upload</span><br>
+                  or drag and drop<br>
+                  JPG, PNG or PDF (max 5MB)
+                </p>
+                <div id="address-preview" class="hidden mt-4 w-full"></div>
+              </div>
+            </div>
+
+            <!-- Selfie with ID -->
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Selfie with ID</label>
+              <div class="file-upload relative rounded-lg flex flex-col items-center justify-center p-6 bg-gray-50 cursor-pointer" id="selfie-upload">
+                <input type="file" id="selfie" name="selfie" accept="image/*" class="hidden">
+                <i class="fas fa-camera text-4xl text-gray-400 mb-2"></i>
+                <p class="text-gray-500 text-center">
+                  <span class="font-medium text-indigo-600">Click to upload</span><br>
+                  or drag and drop<br>
+                  JPG or PNG (max 5MB)
+                </p>
+                <div id="selfie-preview" class="hidden mt-4 w-full"></div>
+              </div>
+            </div>
+
+            <div class="pt-4">
+              <button type="submit" class="w-full md:w-auto px-6 py-3 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                Submit Verification
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="scripts/kyc.js"></script>
+</body>
+</html>
