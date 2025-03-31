@@ -1,0 +1,44 @@
+doctype html
+html
+  head
+    style.
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .header {
+        background-color: #6c5ce7;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        border-radius: 5px 5px 0 0;
+      }
+      .content {
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 0 0 5px 5px;
+      }
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #6c5ce7;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        margin: 20px 0;
+      }
+  body
+    .header
+      h2 Memecoin Bundler Email Verification
+    .content
+      p Hello #{firstName},
+      p Please verify your email address by clicking the button below:
+      a.button(href=url) Verify Email
+      p If you didn't request this, please ignore this email.
+      p The verification link will expire in 24 hours.
+      p Thanks,
+      p The Memecoin Bundler Team
